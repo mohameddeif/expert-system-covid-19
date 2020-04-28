@@ -9,8 +9,21 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<style>
+			.alert-4 {
+				background-color: red;
+			}
+			.alert-3 {
+				background-color: orange;
+			}
+			.alert-2 {
+				background-color: yellow;
+			}
+			.alert-1 {
+				background-color: green;
+			}
+		</style>
     </head>
     <body>
 		<div class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,9 +42,19 @@
     	<div class="container pt-3">
     		<div class="col">
     			<p class="h1 text-center">Sistema Especialista COVID-19</p>
-    		</div>
-    	</div>
+			</div>
+		</div>
 
+		<div class="container">
+			<div class="col-4 offset-4 text-center">
+				@if(session()->has('gravity'))
+				<div class="alert alert-{{ session()->get('gravity') }}">
+					Grau {{ session()->get('gravity') }}
+				</div>
+			@endif
+			</div>
+		</div>
+		
     	<div class="container">
     		<div class="col-12 text-center">
     			<p class="h3">Cadastrar Paciente</p>
